@@ -1,8 +1,10 @@
 import express from 'express';
 
+import { EmailRequest } from './types';
 import * as service from './service';
 
 export const getTemplate = (req: express.Request, res: express.Response) => {
+  const { data, subject } = (req.body as EmailRequest);
   const name = req.params.name;
 
   if (service.getTemplates().indexOf(name) === -1) {
@@ -13,7 +15,7 @@ export const getTemplate = (req: express.Request, res: express.Response) => {
       });
   }
 
-  service.getTemplate(name, 'Branded Email Template', {}, (err, html) => {
+  service.getTemplate(name, subject, data, (err, html) => {
     if (err) {
       return res
         .status(500)

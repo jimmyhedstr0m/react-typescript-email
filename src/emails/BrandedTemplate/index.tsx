@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 import Preheader from '../../components/Preheader';
 
 const BrandedTemplate: React.FC<Props> = (props) => {
-  const { name } = props;
+  const { name } = props.data;
   return (
     <>
       <Preheader text="This is preheader text. Some clients will show this text as a preview." />

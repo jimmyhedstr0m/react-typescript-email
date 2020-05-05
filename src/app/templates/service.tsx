@@ -12,12 +12,12 @@ export const getTemplates = (): typeof TEMPLATES => {
   return TEMPLATES;
 };
 
-export const getTemplate = (name: string, subject: string, data: any, callback: juice.Callback) => {
+export const getTemplate = (name: string, subject: string, data: object, callback: juice.Callback) => {
   let template: JSX.Element;
 
   switch (name) {
     case 'branded':
-      template = <BrandedTemplate name="Jimmy" />;
+      template = <BrandedTemplate data={data} />;
       break;
     default:
       return callback(new Error('Template not found'), '');

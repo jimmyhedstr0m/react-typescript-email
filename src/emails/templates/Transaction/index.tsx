@@ -2,44 +2,36 @@ import React from 'react';
 
 import { Props } from './types';
 import Button from '../../components/Button';
-import Divider from '../../components/Divider';
 import Footer from '../../components/Footer';
-import Header from '../../components/Header';
 import Preheader from '../../components/Preheader';
 
-const BrandedTemplate: React.FC<Props> = (props) => {
-  const { name } = props.data;
+const Transaction: React.FC<Props> = (props) => {
   return (
     <>
       <Preheader text="This is preheader text. Some clients will show this text as a preview." />
-
-      <Header />
-
       <table className="main">
         <tr>
           <td className="wrapper">
             <table>
               <tr>
                 <td>
-                  <h1>
-                    {name
-                      ? `Hello ${name}!`
-                      : 'Hello!'
-                    }
-                  </h1>
-                  <p>Example of an email with image asset.</p>
-                  <p>You should upload your email images to a CDN.</p>
-                  <p>Should come in handy for branded transactional emails or promotional type emails.</p>
-
-                  <Divider />
+                  <h1 className="align-center">Simple responsive HTML email template</h1>
+                  <p>Hi there,</p>
+                  <p>Sometimes you just want to send a simple HTML email with a basic design.</p>
+                  <p>This is a really simple email template. It's sole purpose is to get you to click the button below.</p>
+                  <p>All the information you need is on GitHub.</p>
 
                   <Button
-                    title="Click here for CTA"
+                    align="center"
+                    title="View the source on GitHub"
                     type="primary"
-                    to="https://google.com"
+                    to="https://github.com/userapan/react-typescript-email"
                   >
-                    Click here for CTA
+                    View the source on GitHub
                   </Button>
+
+                  <p>Feel free to use, copy, modify this email template as you wish.</p>
+                  <p>Thanks, have a lovely day.</p>
                 </td>
               </tr>
             </table>
@@ -61,4 +53,4 @@ const BrandedTemplate: React.FC<Props> = (props) => {
   );
 };
 
-export default BrandedTemplate;
+export default Transaction;

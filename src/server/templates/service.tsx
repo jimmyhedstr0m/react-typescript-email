@@ -1,12 +1,13 @@
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { juiceResources } from 'juice';
-import fs from 'fs';
 
-import BrandedTemplate from '../../emails/templates/BrandedTemplate';
+import Branded from '../../emails/templates/Branded';
+import Transaction from '../../emails/templates/Transaction';
 
 const TEMPLATES = [
-  'branded'
+  'Branded',
+  'Transaction'
 ];
 
 export const getTemplates = (): typeof TEMPLATES => {
@@ -18,8 +19,11 @@ export const getTemplate =
     let template: JSX.Element;
 
     switch (name) {
-      case 'branded':
-        template = <BrandedTemplate data={data} />;
+      case 'Branded':
+        template = <Branded data={data} />;
+        break;
+      case 'Transaction':
+        template = <Transaction data={data} />;
         break;
       default:
         return callback(new Error('Template not found'), '');

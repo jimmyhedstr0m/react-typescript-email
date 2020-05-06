@@ -1,6 +1,7 @@
 @import "src/preview/assets/styles/settings";
 
 .block {
+  display: flex;
   height: 100%;
   color: color("primary");
 }

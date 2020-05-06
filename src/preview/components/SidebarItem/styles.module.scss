@@ -1,0 +1,43 @@
+@import "src/preview/assets/styles/settings";
+
+.block {
+  display: block;
+  background-color: #fff;
+  color: color("text");
+  padding: size("sm");
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.from {
+  margin-right: size("sm");
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.date {
+  color: color("gray");
+  white-space: nowrap;
+}
+
+.subject {
+  display: block;  
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.summary {
+  display: block;
+  height: 2 * 1.15 * 14px + 1px;
+  color: color("gray");
+  overflow: hidden;
+}

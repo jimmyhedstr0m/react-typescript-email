@@ -1,0 +1,21 @@
+@import "src/preview/assets/styles/settings";
+
+$border: 1px solid color("light-gray");
+$width: 320px;
+
+.block {  
+  height: 100%;
+  width: $width;
+  flex: 0 0 $width;
+  background-color: #fff;
+  border-right: $border;
+}
+
+.list {
+
+}
+
+.item {
+  padding-left: size("sm");
+  border-bottom: $border;
+}

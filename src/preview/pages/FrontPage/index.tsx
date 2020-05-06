@@ -5,6 +5,7 @@ import { http } from '../../helpers/http';
 import { Props } from './types';
 import styles from './styles.module.scss';
 import IFrame from '../../components/IFrame';
+import Sidebar from '../../components/Sidebar';
 
 const FrontPage: React.FC<Props> = () => {
   const [template, setTemplate] = useState<string>('');
@@ -32,6 +33,8 @@ const FrontPage: React.FC<Props> = () => {
 
   return (
     <div className={styles.block}>
+      <Sidebar />
+
       <IFrame
         className={styles.preview}
         innerHTML={template}

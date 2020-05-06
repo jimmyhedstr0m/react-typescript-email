@@ -1,26 +1,9 @@
 @import "src/preview/assets/styles/settings";
 
 .block {
-  max-width: breakpoint("xs");
   margin-left: auto;
   margin-right: auto;
   padding-left: size("md");
   padding-right: size("md");
   overflow: hidden;
-
-  @media only screen and (min-width: breakpoint("sm")) {
-    max-width: breakpoint("sm");
-  }
-
-  @media only screen and (min-width: breakpoint("md")) {
-    max-width: breakpoint("md");
-  }
-
-  @media only screen and (min-width: breakpoint("lg")) {
-    max-width: breakpoint("lg");
-  }
-
-  @media only screen and (min-width: breakpoint("xl")) {
-    max-width: breakpoint("xl");
-  }
 }

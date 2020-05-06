@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 import '../../assets/styles/styles.scss';
 import styles from './styles.module.scss';
+import Header from '../Header';
 import FrontPage from '../../pages/FrontPage';
 
 const App: React.FC = () => {
@@ -21,13 +22,13 @@ const App: React.FC = () => {
         <meta name="description" content="Create and serve email templates on the fly with Node Express and React." />
       </Helmet>
 
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <Switch>
-            <Route exact={true} path="/" component={FrontPage} />
-          </Switch>
-        </main>
-      </div>
+      <Header />
+
+      <main className={styles.main}>
+        <Switch>
+          <Route exact={true} path="/" component={FrontPage} />
+        </Switch>
+      </main>
     </>
   );
 };

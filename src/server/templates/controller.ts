@@ -15,7 +15,7 @@ export const getTemplate = (req: express.Request, res: express.Response) => {
       });
   }
 
-  service.getTemplate(name, subject, data, (err, html) => {
+  return service.getTemplate(name, subject, data, (err, html) => {
     if (err) {
       return res
         .status(500)
@@ -24,6 +24,6 @@ export const getTemplate = (req: express.Request, res: express.Response) => {
         });
     }
 
-    res.send(html);
+    return res.send(html);
   });
 };

@@ -36,7 +36,7 @@ const BrandedTemplate: React.FC<Props> = (props) => {
                   <Button
                     title="Click here for CTA"
                     type="primary"
-                    to="http://google.com"
+                    to="https://google.com"
                   >
                     Click here for CTA
                   </Button>
@@ -48,10 +48,17 @@ const BrandedTemplate: React.FC<Props> = (props) => {
       </table>
 
       <Footer>
-        <p>Don't like these annoying emails? <a href="{{ default.unsubscribe_url }}"><unsubscribe>Unsubscribe</unsubscribe></a>.</p>
+        <p>
+          Don't like these annoying emails?
+          <a href="https://google.com">
+            <unsubscribe>
+              Unsubscribe
+            </unsubscribe>
+          </a>.
+        </p>
       </Footer>
     </>
-  )
+  );
 };
 
 export default BrandedTemplate;

@@ -14,7 +14,7 @@ const Divider: React.FC<Props> = (props) => {
             cellSpacing="0"
           >
             <tr>
-              <td></td>
+              <td />
             </tr>
           </table>
         </td>

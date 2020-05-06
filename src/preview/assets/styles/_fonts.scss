@@ -1,0 +1,19 @@
+@import "variables.scss";
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 300;
+  src: local("Open Sans"), url("./../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  src: local("Open Sans"), url("./../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 600;
+  src: local("Open Sans"), url("./../fonts/OpenSans-Bold.ttf") format("truetype");
+}

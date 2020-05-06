@@ -49,7 +49,7 @@ const BrandedTemplate: React.FC<Props> = (props) => {
 
       <Footer>
         <p>
-          Don't like these annoying emails?
+          {`Don't like these annoying emails? `}
           <a href="https://google.com">
             <unsubscribe>
               Unsubscribe

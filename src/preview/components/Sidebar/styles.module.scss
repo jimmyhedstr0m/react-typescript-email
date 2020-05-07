@@ -11,11 +11,50 @@ $width: 320px;
   border-right: $border;
 }
 
-.list {
+.item {
+  display: block;
+  background-color: #fff;
+  color: color("text");
+  padding: size("sm");
+  padding-left: size("md");
+  border-bottom: $border;
+  font-size: 14px;
+  line-height: 1.15;
 
+  &.active {
+    background-color: color("light-gray");
+  }
 }
 
-.item {
-  padding-left: size("sm");
-  border-bottom: $border;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.from {
+  margin-right: size("sm");
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.date {
+  color: color("gray");
+  white-space: nowrap;
+}
+
+.subject {
+  display: block;  
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.summary {
+  display: block;
+  height: 2 * 1.15 * 14px + 1px;
+  color: color("gray");
+  overflow: hidden;
 }

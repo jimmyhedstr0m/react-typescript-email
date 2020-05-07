@@ -27,6 +27,7 @@ const App: React.FC = () => {
       <main className={styles.main}>
         <Switch>
           <Route exact={true} path="/" component={FrontPage} />
+          <Route exact={true} path="/:name" component={FrontPage} />
         </Switch>
       </main>
     </>

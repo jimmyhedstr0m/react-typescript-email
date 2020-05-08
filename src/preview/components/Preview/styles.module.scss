@@ -1,11 +1,38 @@
 @import "src/preview/assets/styles/settings";
 
+$spacing: 1rem;
+
 .block {
   width: 100%;
   height: 100%;
 }
 
-.preview {
-  width: 100%;
+.row {
+  display: flex;
   height: 100%;
+}
+
+.preview {
+  height: 100%;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 100%;
+  flex: 0 0 320px;
+  background-color: #fff;
+  border-left: 1px solid color("light-gray");
+  color: color("text");
+}
+
+.title {
+  display: block;
+  padding: .25rem;
+  text-align: center;
+}
+
+.button {
+  margin: 2rem;
 }

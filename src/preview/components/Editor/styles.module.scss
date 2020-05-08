@@ -1,0 +1,69 @@
+@import "src/preview/assets/styles/settings";
+
+$fontSize: size("text--md");
+$lineHeight: 1.25;
+$br: 0px;
+
+.block {
+  @include scrollX();
+  @include scrollY();
+  height: 100%;
+  max-height: 100%;  
+  border-radius: $br;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.textarea {
+  @include scrollX();
+  width: 100%;
+  min-height: 100%;
+  padding: 0px;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  border-width: 0px;
+  padding-left: .25rem;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  background-color: transparent;
+  color: transparent;
+  caret-color: color("text");
+  word-wrap: normal;
+  white-space: pre;
+  resize: none;
+}
+
+.editor {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0px;
+ padding-top: .25rem;
+ padding-bottom: .25rem;
+ padding-left: .25rem;
+ top: 0px;
+ right: 0px;
+ bottom: 0px;
+ left: 0px;
+ font-size: $fontSize;
+ line-height: $lineHeight;
+ word-wrap: normal;
+ white-space: pre;
+ pointer-events: none;
+}
+
+.line_number {
+  display: flex;
+  min-width: 2ch;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}

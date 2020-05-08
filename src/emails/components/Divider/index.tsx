@@ -1,11 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { Props } from './types';
 
 const Divider: React.FC<Props> = (props) => {
-  const { type } = props;
+  const { className, type } = props;
   return (
-    <table className="divider-wrapper">
+    <table
+      className={classNames(
+        'divider-wrapper',
+        className
+      )}
+    >
       <tr>
         <td className="divider-spacer">
           <table

@@ -1,9 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const Footer: React.FC = (props) => {
-  const { children } = props;
+import { Props } from './types';
+
+const Footer: React.FC<Props> = (props) => {
+  const { children, className } = props;
   return (
-    <div className="footer">
+    <div
+      className={classNames(
+        'footer',
+        className
+      )}
+    >
       <table>
         <tr>
           <td className="align-center">

@@ -16,17 +16,7 @@ export const renderTemplate = (subject: string, element: JSX.Element, callback: 
         <link href="${stylePath}" media="all" rel="stylesheet" type="text/css" />
       </head>
       <body itemscope itemtype="http://schema.org/EmailMessage">
-        <table class="body">
-          <tr>
-            <td></td>
-            <td class="container">
-              <div class="content">
-                ${renderToStaticMarkup(element)}
-              </div>
-            </td>
-            <td></td>
-          </tr>
-        </table>      
+        ${renderToStaticMarkup(element)}
       </body>
     </html>
     `;

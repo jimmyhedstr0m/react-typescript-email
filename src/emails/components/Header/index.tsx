@@ -1,8 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const Header: React.FC = () => {
+import { Props } from './types';
+
+const Header: React.FC<Props> = (props) => {
+  const { className } = props;
   return (
-    <div className="header">
+    <div
+      className={classNames(
+        'header',
+        className
+      )}
+    >
       <table>
         <tr>
           <td className="align-center">

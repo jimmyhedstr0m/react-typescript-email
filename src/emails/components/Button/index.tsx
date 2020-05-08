@@ -1,12 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { Props } from './types';
 
 const Button: React.FC<Props> = (props) => {
-  const { align, children, title, to, type } = props;
+  const { align, children, className, title, to, type } = props;
   return (
     <table
-      className={'btn btn-' + type}
+      className={classNames(
+        'btn',
+        'btn-' + type,
+        className
+      )}
       cellPadding="0"
       cellSpacing="0"
     >

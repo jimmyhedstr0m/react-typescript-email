@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 
 import { Props } from './types';
+import { KeyType } from '../../../models/KeyType';
 import styles from './styles.module.scss';
 import parser from './parser';
 
@@ -20,13 +21,10 @@ function safeTagsReplace(str: string) {
 const Editor: React.FC<Props> = (props) => {
   const { className, value } = props;
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const [text, setText] = useState(value || '');
   const [scrollLeft, setScrollLeft] = useState(0);
   const [markup, setMarkup] = useState<string>('');
 
   const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    // setText(event.target.value);
-
     if (props.onChange) {
       props.onChange(event.target.value);
     }
@@ -35,7 +33,7 @@ const Editor: React.FC<Props> = (props) => {
   const onKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     const code = event.keyCode || event.which;
 
-    if (code === 9) {
+    if (code === KeyType.TAB) {
       event.preventDefault();
 
       const TAB_SIZE = 2;

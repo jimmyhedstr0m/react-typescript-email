@@ -27,14 +27,6 @@ const IFrame: React.FC<Props> = (props) => {
         className
       )}
       ref={iframe}
-      style={{
-        height: height
-          ? `${height}px`
-          : '100%',
-        width: width
-          ? `${width}px`
-          : '100%'
-      }}
     />
   );
 };

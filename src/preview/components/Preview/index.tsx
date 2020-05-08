@@ -3,15 +3,19 @@ import classNames from 'classnames';
 
 import { http } from '../../helpers/http';
 import { Props } from './types';
+import { KeyType } from '../../../models/KeyType';
 import styles from './styles.module.scss';
 import Button from '../Button';
 import IFrame from '../../components/IFrame';
 import Editor from '../Editor';
 
+import DeviceIcon from '!svg-react-loader?name=DeviceIcon!../../assets/icons/device.svg';
+
 const Preview: React.FC<Props> = (props) => {
   const { className, template } = props;
   const [innerHTML, setInnerHTML] = useState<string>();
-  const [mock, setMock] = useState<string>(JSON.stringify(template.mock, null, 2));
+  const [isDesktop, setIsDesktop] = useState(true);
+  const [mock, setMock] = useState(JSON.stringify(template.mock, null, 2));
 
   const requestTemplate = (jsonStr: string) => {
     let parsed;
@@ -20,7 +24,7 @@ const Preview: React.FC<Props> = (props) => {
     } catch (_err) {
       parsed = {};
     }
-    console.log('request', parsed);
+
     http(`/api/v1/templates/${template.id}`,
       {
         method: 'POST',
@@ -39,7 +43,7 @@ const Preview: React.FC<Props> = (props) => {
   const onKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     const code = event.keyCode || event.which;
 
-    if (code === 13 && event.metaKey) {
+    if (code === KeyType.ENTER && event.metaKey) {
       requestTemplate(mock);
     }
   };
@@ -57,10 +61,21 @@ const Preview: React.FC<Props> = (props) => {
       )}
     >
       <div className={styles.row}>
-        <IFrame
-          className={styles.preview}
-          innerHTML={innerHTML}
-        />
+        <div className={styles.preview}>
+          <div className={styles.bar}>
+            <Button
+              onClick={() => setIsDesktop(!isDesktop)}
+              title="Toggle device"
+            >
+              <DeviceIcon className={styles.device} />
+            </Button>
+          </div>
+
+          <IFrame
+            className={isDesktop ? styles.desktop : styles.mobile}
+            innerHTML={innerHTML}
+          />
+        </div>
 
         <aside className={styles.editor}>
           <span className={styles.title}>

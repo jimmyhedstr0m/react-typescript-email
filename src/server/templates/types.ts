@@ -1,6 +1,6 @@
 export interface EmailRequest {
   subject: string;
-  data: object;
+  data: any;
 }
 
 export type Callback = (err: Error | undefined, html: string) => any;

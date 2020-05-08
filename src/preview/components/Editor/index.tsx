@@ -23,14 +23,9 @@ const Editor: React.FC<Props> = (props) => {
   const [text, setText] = useState(value || '');
   const [scrollLeft, setScrollLeft] = useState(0);
   const [markup, setMarkup] = useState<string>('');
-  const [maxLine, setMaxLine] = useState(value
-    ? value.split('\n').length
-    : 1
-  );
 
   const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMaxLine(event.target.value.split('\n').length);
-    setText(event.target.value);
+    // setText(event.target.value);
 
     if (props.onChange) {
       props.onChange(event.target.value);
@@ -64,10 +59,12 @@ const Editor: React.FC<Props> = (props) => {
   };
 
   useEffect(() => {
-    const safe = safeTagsReplace(text);
-    const colorized = parser(safe, 'js');
-    setMarkup(colorized);
-  }, [text]);
+    if (value) {
+      const safe = safeTagsReplace(value);
+      const colorized = parser(safe, 'js');
+      setMarkup(colorized);
+    }
+  }, [value]);
 
   return (
     <div
@@ -86,7 +83,7 @@ const Editor: React.FC<Props> = (props) => {
           onScroll={onScroll}
           ref={textAreaRef}
           spellCheck="false"
-          value={text}
+          value={value}
           wrap="off"
         />
         <div

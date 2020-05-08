@@ -1,5 +1,5 @@
 export interface Props {
   data: {
-    name?: string;
+    name: string | null;
   };
 }

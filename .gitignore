@@ -13,6 +13,8 @@ logs
 results
 tmp
 
+main.css
+
 # Optional npm cache directory
 .npm
 

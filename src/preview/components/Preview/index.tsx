@@ -71,10 +71,21 @@ const Preview: React.FC<Props> = (props) => {
             </Button>
           </div>
 
-          <IFrame
-            className={isDesktop ? styles.desktop : styles.mobile}
-            innerHTML={innerHTML}
-          />
+          {isDesktop &&
+            <IFrame
+              className={styles.desktop}
+              innerHTML={innerHTML}
+            />
+          }
+
+          {!isDesktop &&
+            <div className={styles.iphone}>
+              <IFrame
+                className={styles.mobile}
+                innerHTML={innerHTML}
+              />
+            </div>
+          }
         </div>
 
         <aside className={styles.editor}>

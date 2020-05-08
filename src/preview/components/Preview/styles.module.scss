@@ -5,7 +5,6 @@ $iconSize: 2rem;
 
 .block {
   width: 100%;
-  height: 100%;
 }
 
 .row {
@@ -29,9 +28,16 @@ $iconSize: 2rem;
 .preview {
   display: flex;
   width: 100%;
-  height: 100%;
   flex-direction: column;
   align-items: center;
+}
+
+.iphone {
+  background: transparent url(../../assets/images/phone.png) no-repeat 50% 0;
+  background-size: 363px 711px;
+  width: 363px;
+  height: 711px;
+  margin: 1rem auto 0 auto;
 }
 
 .desktop {
@@ -40,16 +46,19 @@ $iconSize: 2rem;
 }
 
 .mobile {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
   width: 320px;
-  height: 100%;
+  height: 461px;
+  margin: 129px 0 0 23px;
 }
 
 .editor {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 300px;
   height: 100%;
-  flex: 0 0 320px;
+  flex: 0 0 300px;
   background-color: #fff;
   border-left: $border;
   color: color("text");

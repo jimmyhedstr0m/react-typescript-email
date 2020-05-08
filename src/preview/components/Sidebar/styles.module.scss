@@ -1,10 +1,9 @@
 @import "src/preview/assets/styles/settings";
 
 $border: 1px solid color("light-gray");
-$width: 320px;
+$width: 300px;
 
 .block {  
-  height: 100%;
   width: $width;
   flex: 0 0 $width;
   background-color: #fff;

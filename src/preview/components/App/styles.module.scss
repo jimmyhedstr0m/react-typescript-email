@@ -3,5 +3,5 @@
 .main {
   position: relative;
   width: 100%;
-  height: calc(100vh - 54px);
+  min-height: calc(100vh - 54px);
 }

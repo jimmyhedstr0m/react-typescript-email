@@ -23,7 +23,7 @@ npm install
 
 #### 2. Create secrets.json
 
-Create a `secrets.json` file in your project root in same format as `secrets.example.json` with your credentials to Mailgiun. If the file is missing, the project won't compile.
+Create a `secrets.json` file in your project root in same format as `secrets.example.json` with your credentials to Mailgun. If the file is missing, the project won't compile.
 
 #### 3. Run the app
 

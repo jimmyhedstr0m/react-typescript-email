@@ -11,8 +11,6 @@ Build your email templates with React, TypeScript and Sass. Create mock data and
 
 ## Getting started
 
-If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's post on [getting started with Grunt](http://24ways.org/2013/grunt-is-not-weird-and-hard/).
-
 ### 1. Setup
 
 Clone this repo, cd to the directory, run `npm install` to install the necessary packages.

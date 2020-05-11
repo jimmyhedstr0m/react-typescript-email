@@ -40,12 +40,11 @@ export const getTemplate = (name: string, subject: string, data: any, callback: 
     const component = React.createElement(templateMap[templateName].component, { data });
     return renderTemplate(subject, component, (err, inlined) => {
       if (err) {
-        console.error(err);
         return callback(new Error(`Failed to inline CSS for template ${name}`), '');
       }
       return callback(undefined, inlined);
     });
   }
 
-  return callback(new Error('Template not found'), '');
+  return callback(new Error(`Template "${name}" not found`), '');
 };

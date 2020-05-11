@@ -21,6 +21,7 @@ function safeTagsReplace(str: string) {
 const Editor: React.FC<Props> = (props) => {
   const { className, value } = props;
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const [scrollTop, setScrollTop] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [markup, setMarkup] = useState<string>('');
 
@@ -49,6 +50,7 @@ const Editor: React.FC<Props> = (props) => {
     if (!ticking) {
       event.persist();
       requestAnimationFrame(() => {
+        setScrollTop(-(event.target as HTMLTextAreaElement).scrollTop || 0);
         setScrollLeft(-(event.target as HTMLTextAreaElement).scrollLeft || 0);
         ticking = false;
       });
@@ -89,7 +91,7 @@ const Editor: React.FC<Props> = (props) => {
           dangerouslySetInnerHTML={{
             __html: markup
           }}
-          style={{ transform: `translateX(${scrollLeft}px)` }}
+          style={{ transform: `translate(${scrollLeft}px, ${scrollTop}px)` }}
         />
       </div>
     </div>

@@ -1,7 +1,5 @@
-import { Props } from './types';
+import { Data } from './types';
 
-export const mock: Props = {
-  data: {
-    name: 'Jimmy'
-  }
+export const mock: Data = {
+  name: 'Jimmy'
 };

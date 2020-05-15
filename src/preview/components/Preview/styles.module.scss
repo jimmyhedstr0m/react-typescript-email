@@ -1,7 +1,6 @@
 @import "src/preview/assets/styles/settings";
 
 $border: 1px solid color("light-gray");
-$iconSize: 2rem;
 
 .block {
   width: 100%;
@@ -20,9 +19,14 @@ $iconSize: 2rem;
   border-bottom: $border;
 }
 
+.mode {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
 .device {
-  width: $iconSize;
-  height: $iconSize;
+  width: 2rem;
+  height: 2rem;
 }
 
 .preview {

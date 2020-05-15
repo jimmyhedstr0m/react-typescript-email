@@ -1,0 +1,82 @@
+
+@mixin dark() {
+  .body {
+    background-color: #121212 !important;
+  }
+
+  .main {
+    background: #222222 !important;
+    border: 1px solid #616161 !important;
+  }
+
+  .footer {
+    * {
+      color: #999999 !important;
+    }
+  }
+
+  .btn {
+    table td {
+      background-color: #121212 !important;
+    }
+
+    a {
+      background-color: #121212 !important;
+      border: solid 1px $primary-color !important;
+      color: $primary-color !important;
+    }
+  }
+
+  .btn-primary {
+    table td {
+      background-color: $primary-color !important;
+    }
+  
+    a {
+      background-color: $primary-color !important;
+      border-color: $primary-color !important;
+      color: #f5f5f5 !important;
+    }
+  }
+
+  .btn-secondary {
+    table td {
+      background-color: transparent !important;
+    }
+  
+    a {
+      background-color: transparent !important;
+      border-color: $primary-color !important;
+      color: $primary-color !important;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #f5f5f5 !important;
+  }
+
+  p,
+  ul,
+  ol {
+    color: #f5f5f5 !important
+  }
+
+  .divider {
+    td {
+      border-top: 1px solid #616161 !important;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .parent:not(.light) {
+    @include dark;
+  }
+}
+
+.dark {
+  @include dark;
+}

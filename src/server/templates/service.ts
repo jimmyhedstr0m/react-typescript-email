@@ -33,11 +33,11 @@ const templateMap: { [key in TemplateType]: { template: Template, component: Rea
 
 export const getTemplates = (): Template[] => Object.keys(templateMap).map((key) => templateMap[key].template);
 
-export const getTemplate = (name: string, subject: string, data: any, callback: Callback) => {
+export const getTemplate = (name: string, subject: string, data: any, mode: string | null, callback: Callback) => {
   const templateName = name as TemplateType;
 
   if (templateMap.hasOwnProperty(templateName)) {
-    const component = React.createElement(templateMap[templateName].component, { data });
+    const component = React.createElement(templateMap[templateName].component, { data, mode });
     return renderTemplate(subject, component, (err, inlined) => {
       if (err) {
         return callback(new Error(`Failed to inline CSS for template ${name}`), '');

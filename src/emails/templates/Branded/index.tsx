@@ -12,7 +12,10 @@ import Unsubscribe from '../../components/Unsubscribe';
 const Branded: React.FC<Props> = (props) => {
   const { name } = props.data;
   return (
-    <Mail preheader="This is preheader text. Some clients will show this text as a preview.">
+    <Mail
+      mode={props.mode}
+      preheader="This is preheader text. Some clients will show this text as a preview."
+    >
       <Header />
 
       <Main>

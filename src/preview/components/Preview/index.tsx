@@ -6,14 +6,16 @@ import { Props } from './types';
 import { KeyType } from '../../../models/KeyType';
 import styles from './styles.module.scss';
 import Button from '../Button';
-import IFrame from '../../components/IFrame';
 import Editor from '../Editor';
+import IFrame from '../../components/IFrame';
 
+import ModeIcon from '!svg-react-loader?name=ModeIcon!../../assets/icons/night.svg';
 import DeviceIcon from '!svg-react-loader?name=DeviceIcon!../../assets/icons/device.svg';
 
 const Preview: React.FC<Props> = (props) => {
   const { className, template } = props;
   const [innerHTML, setInnerHTML] = useState<string>();
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
   const [isDesktop, setIsDesktop] = useState(true);
   const [mock, setMock] = useState(JSON.stringify(template.mock, null, 2));
 
@@ -25,12 +27,12 @@ const Preview: React.FC<Props> = (props) => {
       parsed = {};
     }
 
-    http(`/api/v1/templates/${template.id}`,
+    http(`/api/v1/templates/${template.id}?mode=${mode}`,
       {
         method: 'POST',
         body: JSON.stringify({
           subject: 'Subject',
-          data: parsed.data || {}
+          data: parsed || {}
         })
       })
       .then((res) => res.text())
@@ -48,10 +50,18 @@ const Preview: React.FC<Props> = (props) => {
     }
   };
 
+  const toggleMode = () => {
+    if (mode === 'light') {
+      setMode('dark');
+    } else {
+      setMode('light');
+    }
+  };
+
   useEffect(() => {
     requestTemplate(JSON.stringify(template.mock));
     setMock(JSON.stringify(template.mock, null, 2));
-  }, [template]);
+  }, [template, mode]);
 
   return (
     <div
@@ -64,6 +74,15 @@ const Preview: React.FC<Props> = (props) => {
         <div className={styles.preview}>
           <div className={styles.bar}>
             <Button
+              modifiers="action"
+              onClick={toggleMode}
+              title="Toggle dark mode"
+            >
+              <ModeIcon className={styles.mode} />
+            </Button>
+
+            <Button
+              modifiers="action"
               onClick={() => setIsDesktop(!isDesktop)}
               title="Toggle device"
             >

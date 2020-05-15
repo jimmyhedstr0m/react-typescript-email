@@ -39,20 +39,6 @@
 
   &.action {
     background-color: transparent;
-    color: color("text");
-    padding: size("xs");
-
-    .inner {
-      width: size("md");
-      height: size("md");
-    }
-
-    &.large {
-      .inner {
-        width: size("lg");
-        height: size("lg");
-      }
-    }
   }
 
   &.block {
@@ -89,7 +75,7 @@
     }
   }
 
-  &:not(:last-child) {
+  &:not(:last-child):not(.action) {
     margin-right: size("md");
   }
 }

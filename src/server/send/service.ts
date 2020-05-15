@@ -19,7 +19,7 @@ export const send = (req: EmailRequest): Promise<Mailgun.messages.SendResponse> 
   const { from, to, subject, data, template } = req;
 
   return new Promise((resolve, reject) => {
-    templateService.getTemplate(template, subject, data, (err, html) => {
+    templateService.getTemplate(template, subject, data, null, (err, html) => {
       if (err) {
         reject(err);
       }

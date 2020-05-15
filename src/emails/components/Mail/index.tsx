@@ -4,28 +4,35 @@ import classNames from 'classnames';
 import { Props } from './types';
 
 const Mail: React.FC<Props> = (props) => {
-  const { children, className, preheader } = props;
+  const { children, className, mode, preheader } = props;
   return (
-    <table
+    <div
       className={classNames(
-        'body',
-        className
+        'parent',
+        mode
       )}
     >
-      <tr>
-        <td />
-        <td className="container">
-          <div className="content">
-            <span className="preheader">
-              {preheader}
-            </span>
+      <table
+        className={classNames(
+          'body',
+          className
+        )}
+      >
+        <tr>
+          <td />
+          <td className="container">
+            <div className="content">
+              <span className="preheader">
+                {preheader}
+              </span>
 
-            {children}
-          </div>
-        </td>
-        <td />
-      </tr>
-    </table>
+              {children}
+            </div>
+          </td>
+          <td />
+        </tr>
+      </table>
+    </div>
   );
 };
 

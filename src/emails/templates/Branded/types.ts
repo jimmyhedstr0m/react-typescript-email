@@ -1,5 +1,8 @@
+export interface Data {
+  name: string | null;
+}
+
 export interface Props {
-  data: {
-    name: string | null;
-  };
+  data: Data;
+  mode: 'light' | 'dark';
 }

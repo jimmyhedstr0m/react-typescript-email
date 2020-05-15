@@ -7,9 +7,12 @@ import Mail from '../../components/Mail';
 import Main from '../../components/Main';
 import Unsubscribe from '../../components/Unsubscribe';
 
-const Transaction: React.FC<Props> = (_props) => {
+const Transaction: React.FC<Props> = (props) => {
   return (
-    <Mail preheader="This is preheader text. Some clients will show this text as a preview.">
+    <Mail
+      mode={props.mode}
+      preheader="This is preheader text. Some clients will show this text as a preview."
+    >
       <Main>
         <h1 className="align-center">Simple responsive HTML email template</h1>
         <p>Hi there,</p>

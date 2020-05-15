@@ -12,6 +12,7 @@ export const getTemplates = (_req: express.Request, res: express.Response) => {
 
 export const getTemplate = (req: express.Request, res: express.Response) => {
   const { data, subject } = (req.body as EmailRequest);
+  const mode: string = req.query.mode || 'light';
   const name = req.params.name as TemplateType;
   const templates = service.getTemplates();
 
@@ -23,7 +24,7 @@ export const getTemplate = (req: express.Request, res: express.Response) => {
       });
   }
 
-  return service.getTemplate(name, subject, data, (err, html) => {
+  return service.getTemplate(name, subject, data, mode, (err, html) => {
     if (err) {
       console.log(err);
       return res

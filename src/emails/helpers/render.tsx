@@ -12,6 +12,8 @@ export const renderTemplate = (subject: string, element: JSX.Element, callback: 
       <head>
         <meta name="viewport" content="width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="color-scheme" content="light dark">
+        <meta name="supported-color-schemes" content="light dark">
         <title>${subject}</title>
         <link href="${stylePath}" media="all" rel="stylesheet" type="text/css" />
       </head>

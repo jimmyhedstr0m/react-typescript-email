@@ -64,7 +64,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "jest-css-modules-transform": "^2.1.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.3",
     "razzle": "^3.0.0",
     "razzle-plugin-typescript": "^3.0.0",
